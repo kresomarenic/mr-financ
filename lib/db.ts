@@ -13,7 +13,7 @@ function makePool() {
     const isProd = process.env.NODE_ENV === "production";
 
     // IMPORTANT: force ssl config here (dev skips cert verification)
-    const ssl = isProd ? { rejectUnauthorized: true } : { rejectUnauthorized: false };
+    const ssl = isProd ? { rejectUnauthorized: false } : { rejectUnauthorized: false };
 
     // One-time log so we can confirm the config is actually applied
     console.log("[db] creating pool", { isProd, sslRejectUnauthorized: ssl.rejectUnauthorized });
